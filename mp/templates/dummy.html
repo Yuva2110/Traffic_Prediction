@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(234, 241, 241);
+            background-image: url('../data/bg.jpg');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            height: 100vh;
+            overflow: hidden;
+            width: 100vw;
+
+            background-attachment: fixed;
+            text-align: center;
+        }
+
+        .form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-column-gap: 10px;
+            height: 50%;
+            width: 90%;
+        }
+
+        input,
+        select {
+            width: 200px;
+            padding: 5px;
+            margin: 10px;
+
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .move {
+
+            position: absolute;
+            top: 75%;
+        }
+
+        .moved {
+            margin: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Traffic Prediction</h1>
+
+    <form action="/predict" method="POST">
+        <div class="form">
+
+
+            <div>
+
+                <label>date:</label>
+                <input type="date" name="date" id="date" />
+            </div>
+
+            <div>
+
+                <label>day:</label>
+                <select name="day" id="day">
+                    <option value="0">sunday</option>
+                    <option value="1">monday</option>
+                    <option value="2">tuesday</option>
+                    <option value="3">wednesday</option>
+                    <option value="4">thursday</option>
+                    <option value="5">friday</option>
+                    <option value="6">saturday</option>
+                </select>
+            </div>
+
+            <div>
+
+                <label>time:</label>
+                <input type="time" name="time" id="time">
+            </div>
+
+            <div>
+
+                <label>temperature:</label>
+                <input type="number" name="temperature" id="temperature">
+            </div>
+
+            <div>
+
+                <label>is holiday:</label>
+                <select name="isholiday" id="isholiday">
+                    <option value="yes">yes</option>
+                    <option value="no">no</option>
+                </select>
+            </div>
+
+            <div>
+
+                <label>weather:</label>
+                <select name="x0" id="x0">
+                    <option value="Clear">clear</option>
+                    <option value="Clouds">Clouds</option>
+                    <option value="Drizzle">Drizzle</option>
+                    <option value="Fog">Fog</option>
+                    <option value="Haze">Haze</option>
+                    <option value="Mist">Mist</option>
+                    <option value="Rain">Rain</option>
+                    <option value="Smoke">Smoke</option>
+                    <option value="Snow">Snow</option>
+                    <option value="Squall">Squall</option>
+                    <option value="Thunderstorm">Thunderstorm</option>
+                </select>
+            </div>
+
+        </div>
+        <div class="move">
+            <div>
+
+                <label>climate:</label>
+
+                <select name="x1" id="x1">
+                    <option value="SQUALLS">SQUALLS</option>
+                    <option value="Sky is Clear">Sky is Clear</option>
+                    <option value="broken clouds">broken clouds</option>
+                    <option value="drizzle">drizzle</option>
+                    <option value="few clouds">few clouds</option>
+                    <option value="fog">fog</option>
+                    <option value="freezing rain">freezing rain</option>
+                    <option value="haze">haze</option>
+                    <option value="heavy intensity drizzle">heavy intensity drizzle</option>
+                    <option value="heavy intensity rain">heavy intensity rain</option>
+                    <option value="heavy snow">heavy snow</option>
+                    <option value="light intensity drizzle">light intensity drizzle</option>
+                    <option value="light intensity shower rain">light intensity shower rain</option>
+                    <option value="light rain">light rain</option>
+                    <option value="light rain and snow">light rain and snow</option>
+                    <option value="light shower snow">light shower snow</option>
+                    <option value="light snow">light snow</option>
+                    <option value="mist">mist</option>
+                    <option value="moderate rain">moderate rain</option>
+                    <option value="overcast clouds">overcast clouds</option>
+                    <option value="proximity shower rain">proximity shower rain</option>
+                    <option value="proximity thunderstorm">proximity thunderstorm</option>
+                    <option value="proximity thunderstorm with drizzle">proximity thunderstorm with drizzle</option>
+                    <option value="proximity thunderstorm with rain">proximity thunderstorm with rain</option>
+                    <option value="scattered clouds">scattered clouds</option>
+                    <option value="shower snow">shower snow</option>
+                    <option value="sky is clear">sky is clear</option>
+                    <option value="sleet">sleet</option>
+                    <option value="smoke">smoke</option>
+                    <option value="snow">snow</option>
+                    <option value="thunderstorm">Thunderstorm</option>
+                    <option value="thunderstorm with drizzle">thunderstorm with drizzle</option>
+                    <option value="thunderstorm with heavy rain">thunderstorm with heavy rain</option>
+                    <option value="thunderstorm with light drizzle">thunderstorm with light drizzle</option>
+                    <option value="thunderstorm with light rain">thunderstorm with light rain</option>
+                    <option value="thunderstorm with rain">thunderstorm with rain</option>
+                    <option value="very heavy rain">very heavy rain</option>
+                </select>
+            </div>
+            <div class="moved">
+            </div>
+        </div>
+        <input type="submit" value="predict" class="btn btn-success">
+
+    </form>
+</body>
+
+</html>

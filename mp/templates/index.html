@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(234, 241, 241);
+            background-image: url('bg2.jpg');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            height:100vh;
+            width:100vw;
+            overflow-x:hidden;
+
+background-attachment: fixed;
+text-align: center;
+        }
+        .image{
+background:url('logo.png');
+position:absolute;
+z-index: 3;
+left:0px;
+height:150px;
+width:150px;
+ background-size: 100% 100%;
+        }
+   
+.form{
+
+place-items:center;
+display:grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-column-gap:10px;
+height:50%;
+width:90%;
+}
+.flex{
+display:flex;
+ width:100vw;
+    position:absolute;
+    z-index:3;
+    justify-content: space-between;
+    align-items: center;
+}
+input,select{
+width:200px;
+padding:5px;
+    margin:10px;
+
+}
+h2{
+    text-align: center;
+    text-decoration: underline;
+}
+div{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.move{
+
+display:grid;
+place-items:center;
+  
+}
+.top{
+  width:50%;
+  height:50%;
+  object-fit:contain;
+  margin:50px;
+}
+
+.bottom{
+
+display:flex;
+justify-content:space-between;
+width:100%;
+height:100%;
+}
+.moved{
+margin:10px;
+
+}
+    </style>
+</head>
+<div>
+
+
+<main>
+ <div  class="image">
+
+</div>
+<h2  >JAWAHARLAL NEHRU TECHNOLOGICAL UNIVERSITY HYDERABAD </h2>
+<h2  >UNIVERSITY COLLEGE OF ENGINEERING JAGTIAL</h2>
+<h1>Traffic Prediction using DEEP LEARNING</h1>
+    
+</main>
+
+<form action="/predict" method="POST">
+<div class="form">
+
+
+   <div>
+
+<label ><h2>date</h2></label>
+<input type="date" name="date" id="date"/>
+
+</div>
+
+<div>
+
+<label><h2>day</h2></label>
+<select name="day" id="day">
+    <option value="0">sunday</option>
+    <option value="1">monday</option>
+    <option value="2">tuesday</option>
+    <option value="3">wednesday</option>
+    <option value="4">thursday</option>
+    <option value="5">friday</option>
+    <option value="6">saturday</option>
+</select>
+</div>
+
+<div>
+
+<label><h2>time</h2></label>
+<input type="time" name="time" id="time">
+</div>
+
+<div>
+
+<label><h2>temperature</h2></label>
+<input type="number" name="temperature" id="temperature">
+</div>
+
+<div>
+
+<label><h2>is holiday</h2></label>
+<select name="isholiday" id="isholiday">
+    <option value="yes">yes</option>
+    <option value="no">no</option>
+</select>
+</div>
+
+<div>
+
+<label><h2>Climate condition</h2></label>
+<select name="x0" id="x0" onchange=fun(this) >
+  <option value="Clear">clear</option>
+  <option value="Clouds">Clouds</option>
+  <option value="Drizzle">Drizzle</option>
+  <option value="Fog">Fog</option>
+  <option value="Haze">Haze</option>
+  <option value="Mist">Mist</option>
+  <option value="Rain">Rain</option>
+  <option value="Smoke">Smoke</option>
+  <option value="Snow">Snow</option>
+  <option value="Squall">Squall</option>
+  <option value="Thunderstorm">Thunderstorm</option>
+</select>
+
+</div>
+   
+</div>
+<div class="move">
+<div>
+
+    <label><h2>weather discription</h2></label>
+
+    <select name="x1" id="x1">
+        <option value="SQUALLS">SQUALLS</option>
+        <option value="Sky is Clear">Sky is Clear</option>
+        <option value="broken clouds">broken clouds</option>
+        <option value="drizzle">drizzle</option>
+        <option value="few clouds">few clouds</option>
+        <option value="fog">fog</option>
+        <option value="freezing rain">freezing rain</option>
+        <option value="haze">haze</option>
+        <option value="heavy intensity drizzle">heavy intensity drizzle</option>
+        <option value="heavy intensity rain">heavy intensity rain</option>
+        <option value="heavy snow">heavy snow</option>
+        <option value="light intensity drizzle">light intensity drizzle</option>
+        <option value="light intensity shower rain">light intensity shower rain</option>
+        <option value="light rain">light rain</option>
+        <option value="light rain and snow">light rain and snow</option>
+        <option value="light shower snow">light shower snow</option>
+        <option value="light snow">light snow</option>
+        <option value="mist">mist</option>
+        <option value="moderate rain">moderate rain</option>
+        <option value="overcast clouds">overcast clouds</option>
+        <option value="proximity shower rain">proximity shower rain</option>
+        <option value="proximity thunderstorm">proximity thunderstorm</option>
+        <option value="proximity thunderstorm with drizzle">proximity thunderstorm with drizzle</option>
+        <option value="proximity thunderstorm with rain">proximity thunderstorm with rain</option>
+        <option value="scattered clouds">scattered clouds</option>
+        <option value="shower snow">shower snow</option>
+        <option value="sky is clear">sky is clear</option>
+        <option value="sleet">sleet</option>
+        <option value="smoke">smoke</option>
+        <option value="snow">snow</option>
+        <option value="thunderstorm">Thunderstorm</option>
+        <option value="thunderstorm with drizzle">thunderstorm with drizzle</option>
+        <option value="thunderstorm with heavy rain">thunderstorm with heavy rain</option>
+        <option value="thunderstorm with light drizzle">thunderstorm with light drizzle</option>
+        <option value="thunderstorm with light rain">thunderstorm with light rain</option>
+        <option value="thunderstorm with rain">thunderstorm with rain</option>
+        <option value="very heavy rain">very heavy rain</option>
+    </select>
+</div>
+<div class="moved">
+
+    <input type="submit" value="predict" class="btn btn-success"/>
+</div>
+</div>
+
+    </form>
+
+
+<script >
+
+function  fun(e){
+
+    console.log(e.value)
+let body=document.querySelector('body');
+if(e.value=="Haze"){
+body.style.background='url(giphy.gif)'
+body.style.backgroundSize='100% 100%'
+}
+    if (e.value == "Clear") {
+        body.style.background = 'url(clear.gif)'
+        body.style.backgroundSize = '100% 100%'
+    }
+    if (e.value == "Drizzle") {
+        body.style.background = 'url(Drizzle.gif)'
+        body.style.backgroundSize = '100% 100%'
+    }
+    if (e.value == "Fog") {
+        body.style.background = 'url(Fog.gif)'
+        body.style.backgroundSize = '100% 100%'
+    }
+    if (e.value == "Clouds") {
+        body.style.background = 'url(Clouds.gif)'
+        body.style.backgroundSize = '100% 100%'
+    }
+    if (e.value == "Mist") {
+        body.style.background = 'url(mist.jpeg)'
+        body.style.backgroundSize = '100% 100%'
+    }
+    if (e.value == "Rain") {
+        body.style.background = 'url(Rain.gif)'
+        body.style.backgroundSize = '100% 100%'
+    }
+    if (e.value == "Thunderstorm") {
+        body.style.background = 'url(Thunderstorm.gif)'
+        body.style.backgroundSize = '100% 100%'
+    }
+}
+
+</script>
+
+{% block body %} {% endblock%}
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(234, 241, 241);
+            background-image: url('bg1.jpg');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            height: 100vh;
+            overflow: hidden;
+            width: 100vw;
+
+            background-attachment: fixed;
+            text-align: center;
+        }
+
+        .image {
+            background: url('logo.png');
+            position: absolute;
+            z-index: 3;
+            height: 100px;
+            width: 100px;
+            background-size: 100% 100%;
+        }
+
+        .form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-column-gap: 10px;
+            height: 50%;
+            width: 90%;
+        }
+
+        .flex {
+            display: flex;
+            width: 100vw;
+            position: absolute;
+            z-index: 3;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        input,
+        select {
+            width: 200px;
+            padding: 5px;
+            margin: 10px;
+
+        }
+
+        h2 {
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .move {
+
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, 0)
+        }
+
+        .moved {
+            margin: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <main>
+        <div class="image">
+
+        </div>
+        <h2>JAWAHARLAL NEHRU TECHNOLOGICAL UNIVERSITY HYDERABAD </h2>
+        <h2>UNIVERSITY COLLEGE OF ENGINEERING JAGTIAL</h2>
+        <h1>Traffic Prediction using DEEP LEARNING</h1>
+
+    </main>
+    <form action="/train">
+        <button type="submit">click me to train model</button>
+    </form>
+</body>
+
+</html>
